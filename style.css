@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #3A3662;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  justify-content: space-between;
+  background: #484C75;
+  Color: white;
+}
+
+nav ul li{
+  margin: 0 0.3em;
+}
+
+nav ul .logo {
+  width: 2em;
+  height: 2em;
+  border-radius: 100%;
+  display: flex;
+}
+
+
+.playBox{
+  position: absolute;
+  bottom: 4em;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh
+}
+i{
+  color: white;
+  cursor: pointer;
+}
+.playlist{
+  background-image: url("/images/Background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 80vw;
+  height: 50vh;
+  border-radius: 0.6em;
+  color: white;
+}
+.playBox{
+  width: 100%;
+  display: flex;
+  background:#2B38CE;
+ justify-content: center;
+}
+.playBox input{
+  width: 100%;
+  position: relative;
+  left: 20%;
+}
+.playBox  i{
+  position: relative;
+  top: 25px;
+  width: 20vw;
+  right: 25%;
+  color: #D9DBF4;
+}
+
+.playlist div{
+  display: flex;
+  justify-content: space-evenly;
+  background-color: green;
+  align-items: center;
+  border-radius: 12px;
+  margin: 2em;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  
+}
+.playlist div img{
+  width: 2em;
+  height: 2em;
+  border-radius: 100%;
+}
+.nowplaying{
+  position: absolute;
+  top: 35em; 
+  left: 10%;
+  background: #32354C;
+  color: white;
+  text-align: center;
+  border-radius: 2em;
+}
