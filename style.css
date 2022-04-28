@@ -38,7 +38,8 @@ nav ul .logo {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh
+  height: 60vh;
+  
 }
 i{
   color: white;
@@ -52,11 +53,11 @@ i{
   height: 50vh;
   border-radius: 0.6em;
   color: white;
+  overflow-y: scroll;
 }
 .playBox{
   width: 100%;
   display: flex;
-  background:#2B38CE;
  justify-content: center;
 }
 .playBox input{
@@ -96,4 +97,9 @@ i{
   color: white;
   text-align: center;
   border-radius: 2em;
+}
+.playlist h3{
+  position: sticky;
+  top: 0;
+  margin-left: 20%;
 }
