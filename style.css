@@ -92,11 +92,14 @@ i{
 .nowplaying{
   position: absolute;
   top: 35em; 
-  left: 10%;
-  background: #32354C;
+ /* left: 28%;*/
+  background: url("/images/Playing.gif");
   color: white;
   text-align: center;
   border-radius: 2em;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .playlist h3{
   position: sticky;

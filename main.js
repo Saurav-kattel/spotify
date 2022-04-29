@@ -1,6 +1,5 @@
-
-let songIndex = 0;
-let audioElm = new Audio();
+ let i = 0;
+let audioElm = new Audio("/music/1.mp3");
 let masterPlay = document.getElementById("masterPlay");
 let progressBar = document.getElementById("progressBar");
 let infoBox = document.getElementById("infoBox");
@@ -9,6 +8,7 @@ let items = document.getElementsByClassName("items");
 let songName = document.getElementsByClassName('songsName');
 let previousBtn = document.getElementById("previousBtn")
 let nextBtn = document.getElementById("nextBtn")
+let marquee = document.getElementById('marquee')
 let songs = [
   
   { name: "annner-marie", filePath: "/music/1.mp3"},
@@ -71,10 +71,10 @@ Array.from(items).forEach((element,i)=>{
 
 const makeAllPlay = ()=>{
   Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
-    
+    infoBox.style.display= "block";
     element.classList.remove("fa-pause");
     element.classList.add("fa-play");
-    
+      marquee.innerText = songs[i].name;
     })
 }
 
@@ -89,20 +89,30 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element,i)=
 audioElm.play();
       masterPlay.classList.remove("fa-play");
     masterPlay.classList.add("fa-pause");
+      marquee.innerText = songs[i].name;
   })
 })
 
 //fowarding and previous playing functionz
 
-function previous(){
-
-}
 
 
-nextBtn.addEventListener('click', (i)=>{
-  audioElm.src = songs[i++].filePath;
+nextBtn.addEventListener('click', ()=>{
+  i++;
+  audioElm.src = songs[i].filePath;
   audioElm.currentTime = 0;
 audioElm.play();
       masterPlay.classList.remove("fa-play");
     masterPlay.classList.add("fa-pause");
+    marquee.innerText = songs[i].name;
+})
+
+previousBtn.addEventListener('click', ()=>{
+  i--;
+  audioElm.src = songs[i].filePath;
+  audioElm.currentTime = 0;
+audioElm.play();
+      masterPlay.classList.remove("fa-play");
+    masterPlay.classList.add("fa-pause");
+  marquee.innerText = songs[i].name;
 })
