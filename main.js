@@ -6,9 +6,12 @@ let progressBar = document.getElementById("progressBar");
 let infoBox = document.getElementById("infoBox");
 let playBox = document.getElementsByClassName("playBox");
 let items = document.getElementsByClassName("items");
+let songName = document.getElementsByClassName('songsName');
+let previousBtn = document.getElementById("previousBtn")
+let nextBtn = document.getElementById("nextBtn")
 let songs = [
   
-  { name: "annner-marie", filePath: "/music/Anne-Marie_-_2002_(Lyrics)(256k).mp3" },
+  { name: "annner-marie", filePath: "/music/1.mp3"},
   
   { name: "Closer_by_chainsmokers", filePath: "/music/Closer_by_chainsmokers_lyrical_video_--(256k).mp3" },
   
@@ -68,25 +71,38 @@ Array.from(items).forEach((element,i)=>{
 
 const makeAllPlay = ()=>{
   Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+    
     element.classList.remove("fa-pause");
     element.classList.add("fa-play");
+    
     })
 }
 
 
-Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
+Array.from(document.getElementsByClassName('songItemPlay')).forEach((element,i)=>{
   element.addEventListener('click', (e)=>{
     makeAllPlay();
     e.target.classList.remove("fa-play");
     e.target.classList.add("fa-pause");
-    
-    songIndex = parseInt(e.target.id);
-    audioElm.src = `/music/${songIndex+1}.mp3`
+    audioElm.src = songs[i].filePath;
     audioElm.currentTime = 0;
-    audioElm.play();
-
-
+audioElm.play();
       masterPlay.classList.remove("fa-play");
     masterPlay.classList.add("fa-pause");
   })
+})
+
+//fowarding and previous playing functionz
+
+function previous(){
+
+}
+
+
+nextBtn.addEventListener('click', (i)=>{
+  audioElm.src = songs[i++].filePath;
+  audioElm.currentTime = 0;
+audioElm.play();
+      masterPlay.classList.remove("fa-play");
+    masterPlay.classList.add("fa-pause");
 })
